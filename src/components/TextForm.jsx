@@ -8,6 +8,9 @@ const TextForm = () => {
   const handleClick = () => {
     setText(text.toUpperCase());
   };
+  const lowercase = () => {
+    setText(text.toLowerCase());
+  };
   const handleClear = () => {
     setText("");
   };
@@ -44,6 +47,9 @@ const TextForm = () => {
       </div>
       <button className="btn btn-primary" onClick={handleClick}>
         Convert to Uppercase
+      </button>
+      <button className="btn btn-primary mx-2" onClick={lowercase}>
+        Convert to Lowercase
       </button>
       <button className="btn btn-primary mx-2" onClick={handleClear}>
         Clear
