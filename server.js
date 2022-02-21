@@ -1,16 +1,23 @@
-const express = require('express');
-const dotenv = require('dotenv').config();
-const colors = require('colors');
+// server.js
+const express = require("express");
+const { v4: uuidv4 } = require('uuid');
+console.log(uuidv4());
 
-const { errorHandler } = require('./middleware/errorMiddleware');
-const connectDB = require('./config/db')
-connectDB()
-const PORT = process.env.PORT || 5000
-const app = express()
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-app.use('/api/goals', require('./routes/goalRoutes'))
-app.use('/api/users', require('./routes/userRoutes'))
-app.use(errorHandler)
+const app = express();
 
-app.listen(PORT, () => { console.log(`Server listening on port ${PORT}`) })
+app.set('view engine', 'ejs')
+app.use(express.static('public'))
+
+const server = require("http").Server(app);
+
+app.get('/', function (req, res) {
+    // NEW CODE
+    res.redirect(`/${uuidv4()}`);
+})
+app.get("/:room", (req, res) => {
+    res.render("room", { roomId: req.params.room });
+});
+
+
+
+server.listen(3030);

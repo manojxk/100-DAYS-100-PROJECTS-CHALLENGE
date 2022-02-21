@@ -1,10 +1,10 @@
 {
-  "name": "100-days-100-projects-challenge",
+  "name": "video-chat-app",
   "version": "1.0.0",
-  "description": "Goal setter",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,16 +17,10 @@
   },
   "homepage": "https://github.com/manojxk/100-DAYS-100-PROJECTS-CHALLENGE#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "colors": "^1.4.0",
-    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "express-async-await": "^1.1.0",
-    "express-async-handler": "^1.2.0",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
+    "peer": "^0.6.1",
+    "socket.io": "^4.4.1",
+    "uuid": "^8.3.2"
   }
 }
